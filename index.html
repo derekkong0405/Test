@@ -6,7 +6,6 @@ PE html>
     <title>Beckman High Science Olympiad</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Ensure both background images are available in the same directory as your HTML file */
         body {
             margin: 0;
             padding: 0;
@@ -17,29 +16,25 @@ PE html>
             position: relative;
         }
 
-        /* Style for the navbar, content, etc. */
         .banner {
-            /* Your existing styles for the banner */
         }
 
         .navbar {
-            /* Your existing styles for the navbar */
         }
 
         .content {
-            /* Your existing styles for the content */
-            padding-top: 300px; /* Adjust according to navbar height */
+            padding-top: 300px;
             position: relative;
             z-index: 2;
-            transition: transform 0.5s ease; /* Transition for content transform */
+            transition: transform 0.5s ease;
         }
 
         .content.hidden {
-            transform: translateX(-100%); /* Initially hidden off-screen to the right */
+            transform: translateX(-100%);
         }
 
         .content.visible {
-            transform: translateX(0); /* Slide in from the left */
+            transform: translateX(0);
         }
 
  
@@ -47,13 +42,13 @@ PE html>
         .about-section {
     position: absolute;
     top: 50%;
-    right: calc((-400% + 600px) / 2); /* Adjust 600px according to the width of your about section */
+    right: calc((-400% + 600px) / 2);
     transform: translateY(-200%);
-    background-color: rgba(0, 0, 0, 0.726); /* Dark semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.726); 
     padding: 20px;
     color: white;
     border-radius: 10px;
-    transition: right 0.5s ease; /* Transition for moving from right to left */
+    transition: right 0.5s ease; 
 }
 
 
@@ -61,7 +56,7 @@ PE html>
         .about-section.visible {
             position: absolute;
             top: 50%;
-            right: 24%; /* Move in from the right */
+            right: 24%;
         }
     </style>
 </head>
@@ -102,25 +97,25 @@ PE html>
     </div>
 
     <script>
-        // Get references to the home and about us content
+
         const homeContent = document.getElementById("homeContent");
         const aboutContent = document.getElementById("aboutContent");
         const aboutSection = document.getElementById("aboutSection");
 
-        // Get references to the home and about us links
+ 
         const homeLink = document.getElementById("homeLink");
         const aboutLink = document.getElementById("aboutLink");
 
-        // Add click event listeners to the home and about us links
+
         homeLink.addEventListener("click", function(event) {
             // Show home content and hide about us content
             homeContent.classList.add("visible");
             homeContent.classList.remove("hidden");
             aboutContent.classList.remove("visible");
             aboutContent.classList.add("hidden");
-            aboutSection.classList.remove("visible"); // Hide about section
+            aboutSection.classList.remove("visible");
 
-            // Change background image to mainBackground.png
+
             document.body.style.backgroundImage = "url('mainBackground.png')";
 
             // Prevent default link behavior
@@ -128,17 +123,17 @@ PE html>
         });
 
         aboutLink.addEventListener("click", function(event) {
-            // Show about us content and hide home content
+
             homeContent.classList.remove("visible");
             homeContent.classList.add("hidden");
             aboutContent.classList.add("visible");
             aboutContent.classList.remove("hidden");
-            aboutSection.classList.add("visible"); // Show about section
+            aboutSection.classList.add("visible"); 
 
-            // Change background image to background2.png
+
             document.body.style.backgroundImage = "url('background2.png')";
 
-            // Prevent default link behavior
+
             event.preventDefault();
         });
     </script>
