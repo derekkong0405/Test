@@ -1,194 +1,219 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beckman High Science Olympiad</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-image: url('mainBackground.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
 
-body {
-    /*overflow-x: hidden; /* Hide horizontal scrollbar */
-    /*overflow-y: scroll; /* Hide vertical scrollbar */
-    margin: 0; /* Reset default margin */
-    padding: 0; /* Reset default padding */
-}
+        .banner {
+            /* Your existing styles for the banner */
+        }
 
-.banner {
-    width: 100%;
-    height: 100vh; /* Ensure banner takes up the full height of the viewport */
-    background-size: cover;
-    background-position: center;
-    position: relative; /* Ensure position is relative for absolute positioning */
-    overflow: auto; /* Hide overflowing content */
-}
+        .navbar {
+            /* Your existing styles for the navbar */
+        }
 
-.background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Overlay color */
-    z-index: 1;
-    transition: opacity 0.5s ease; /* Transition for overlay opacity */
-    pointer-events: none; /* Allow clicks to go through the overlay */
-}
+        .content {
+            /* Your existing styles for the content */
+            padding-top: 300px; /* Adjust according to navbar height */
+            position: relative;
+            z-index: 2;
+            transition: transform 0.5s ease; /* Transition for content transform */
+        }
 
-.navbar {
-    width: 100%; /* Full width navbar */
-    padding: 10px 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-}
+        .content.hiddenRight {
+            /*transform: translateX(100%); /* Initially hidden off-screen to the right */
+            visibility: hidden;
+        }
 
-.logo {
-    width: 90px; /* Adjust the logo size as needed */
-    cursor: pointer;
-    margin-left: 20px; /* Add margin to the left side of the logo */
-    margin-top: 20px; /* Add margin to the top of the logo */
-}
+        .content.hiddenLeft {
+            /*transform: translateX(-100%); /* Initially hidden off-screen to the right */
+            visibility: hidden;
+        }
 
-.navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center; /* Center the navigation links */
-}
+        .content.visible {
+            /*transform: translateX(0); /* Slide in from the left */
+            visibility: visible;
+        }
 
-.navbar ul li {
-    display: inline-block;
-    margin: 0 20px;
-    position: relative;
-}
+        .about-section.visible {
+            position: absolute;
+            top: 50%;
+            right: 50%; /* Move in from the right */
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.png" class="logo">
+            <ul>
+                <li><a href="#" id="homeLink">Home</a></li>
+                <li><a href="#" id="aboutLink">About us</a></li>
+                <li><a href="#" id="teamLink">Meet the Team</a></li>
+                <li><a href="#" id="calendarLink">Calendar</a></li>
+                <li><a href="#" id="galleryLink">Gallery</a></li> <!-- Added ID for the Gallery link -->
+            </ul>
+        </div>
+        
+        
+        <div class="content visible" id="homeContent">
+            <h1>Beckman High School<br>Science Olympiad</h1>
+            <p>Welcome to our website!</p>
+            
+            <div>
+                <button type="button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSewlTztYghx6FdbDDdIhrqmpe5sLDRTm78ROTX4g5c4zzs0Ww/viewform', '_blank')"><span></span>Tryouts!</button>
+                <button type="button" onclick="window.open('https://www.beckman-foundation.org/local-community-support/bhs-scioly/', '_blank')"><span></span>Arnold & Mabel Foundation!</button>
+            </div>
+        </div>
 
-.navbar ul li a {
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
-}
+        <div class="content hidden" id="aboutContent">
+            <div class="about-section" id="aboutSection">
+                <h2>About Us!</h2>
+                <p>Science Olympiad, as the name suggests, is a competition for students to bridge technical and theoretical work by competing in engineering, science, and math events!
+                    <br> At Beckman, we strive to provide the resources for each and every member to feel the magic of science by getting their hands into concepts, not just reading about them. 
+                    <br>
+                        <br> <i>Our mission is to foster a supportive learning environment and a tight-knit community of scientists and 
+                            <br>engineers who are eager to take advantage of resources that will help them explore STEM beyond the classroom</i>
+                </p>
+            </div>
+        </div>
 
-.navbar ul li::after {
-    content: '';
-    height: 3px;
-    width: 0%;
-    background: #3945ecd6;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: width 0.5s ease; /* Transition for underline width */
-}
+        <div class="content hidden" id="PresidentContent">
+            <div class="president-section" id="PresidentSection">
+                <h2>Meet the Board!</h2>
+                <p>
+                    Derek Kong - President
+                    <br>Gillian Hu - Vice President
+                    <br>Siddh Ranawat - Secretary
+                    <br>Bethany Cheung - Treasurer
+                    <br>Anderson Kwon - Build Captain
+                    <br>Miles Huang - Build Lieutenant
+                </p>
+                <!-- Add team member details here -->
+            </div>
+        </div>
+        
+        <div class="content hidden" id="MemberContent">
+            <div class="member-section" id="MemberSection">
+                <h2>Meet the Team!</h2>
+                <p>
+                    Adith Alagiri
+                    <br>Nathan Chan
+                    <br>Esther Che
+                    <br>Derrick Chen
+                    <br>Annie Chien
+                    <br>Aditi Dhawan
+                    <br>Carson Gan
+                    <br>Amudhan Gurumoorthy
+                    <br>Lindsey Jiang
+                    <br>Jordan Kikuta
+                    <br>Minjee Kim
+                    <br>Hannah Kim
+                    <br>Carolyn Lee
+                    <br>Sasan Liaw
+                    <br>Kelly Lin
+                    <br>Melody Liu
+                    <br>Timothy Llata
+                    <br>Breanna Nguyen
+                    <br>VanPhuong Nguyen
+                    <br>Ayush Patel
+                    <br>Matthew Sato
+                    <br>Maya Savani
+                    <br>Sophie Tsai
+                    <br>Serena Zhang
+                </p>
+                <!-- Add team member details here -->
+            </div>
+        </div>
 
-.navbar ul li:hover::after {
-    width: 100%;
-}
 
-.content {
-    padding-top: 100px; /* Adjust according to navbar height */
-    text-align: center;
-    color: #fff;
-    position: relative;
-    z-index: 2;
-    transition: transform 0.5s ease; /* Transition for content transform */
-}
+    </div>
 
-.content.hidden {
-    /*transform: translateX(100%); /* Initially hidden off-screen to the right */
-    visibility: hidden;
-}
-
-.content.visible {
-    /*transform: translateX(0); /* Slide in from the left */
-    visibility: visible;
-}
-
-.content h1 {
-    font-size: 50px;
-    margin-top: 80px;
-}
-
-.content p {
-    margin: 20px auto;
-    font-weight: 100;
-    line-height: 25px;
-}
-
-button {
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #3945ecd6;
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
-    position: relative; /* Ensure button's position is relative */
-    overflow: hidden;
-}
-
-span {
-    background: #3945ecd6;
-    height: 100%;
-    width: 0%;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: 0.5s;
-}
-
-button:hover span {
-    width: 100%;
-}
-
-button:hover {
-    border: none;
-    z-index: 1; /* Ensure button is above span */
-}
-
-.about-section {
-    position: sticky;
-    top: 50%;
-    left: 50%;
-    transform: translate(-12%, -215%);
-    background-color: rgba(0, 0, 0, 0.726);
-    padding: 40px; /* Increased padding */
-    color: white;
-    border-radius: 20px; /* Increased border radius */
-    transition: right 0.5s ease;
-    width: 80%; /* Adjust width as needed */
-    max-width: 900px; /* Optional: Set a maximum width */
-}
-
-.president-section {
-    position: sticky;
-    top: 50%;
-    left: 50%;
-    transform: translate(-22%, -500%);
-    background-color: rgba(0, 0, 0, 0.726);
-    padding: 40px; /* Increased padding */
-    color: white;
-    border-radius: 20px; /* Increased border radius */
-    transition: right 0.5s ease;
-    width: 80%; /* Adjust width as needed */
-    max-width: 700px; /* Optional: Set a maximum width */
-    height: 280px; /* Adjust height as needed */
-}
-
-.member-section {
-    position: sticky;
-    top: 50%;
-    left: 50%;
-    transform: translate(-22%, -235%);
-    background-color: rgba(0, 0, 0, 0.726);
-    padding: 40px; /* Increased padding */
-    color: white;
-    border-radius: 20px; /* Increased border radius */
-    transition: right 0.5s ease;
-    width: 80%; /* Adjust width as needed */
-    max-width: 700px; /* Optional: Set a maximum width */
-    height: 700px; /* Adjust height as needed */
-}
+    <script>
+        const homeContent = document.getElementById("homeContent");
+        const aboutContent = document.getElementById("aboutContent");
+        const President = document.getElementById("PresidentContent");
+        const aboutSection = document.getElementById("aboutSection");
+        const presidentSection = document.getElementById("PresidentSection");
+        const homeLink = document.getElementById("homeLink");
+        const aboutLink = document.getElementById("aboutLink");
+        const teamLink = document.getElementById("teamLink");
+        const calendarLink = document.getElementById("calendarLink");
+        const Member = document.getElementById("MemberContent");
+        const memberSection = document.getElementById("MemberSection");
+        const galleryLink = document.getElementById("galleryLink"); // Added reference for the Gallery link
+    
+        homeLink.addEventListener("click", function(event) {
+            homeContent.classList.add("visible");
+            homeContent.classList.remove("hidden");
+            aboutContent.classList.remove("visible");
+            aboutContent.classList.add("hidden");
+            President.classList.remove("visible");
+            President.classList.add("hidden");
+            aboutSection.classList.remove("visible");
+            presidentSection.classList.remove("visible");
+            Member.classList.remove("visible");
+            Member.classList.add("hidden");
+            memberSection.classList.remove("visible");
+            memberSection.classList.add("hidden");
+            document.body.style.backgroundImage = "url('mainBackground.png')";
+            event.preventDefault();
+        });
+    
+        aboutLink.addEventListener("click", function(event) {
+            homeContent.classList.remove("visible");
+            homeContent.classList.add("hiddenLeft");
+            aboutContent.classList.add("visible");
+            aboutContent.classList.remove("hidden");
+            President.classList.remove("visible");
+            President.classList.add("hidden");
+            aboutSection.classList.add("visible");
+            presidentSection.classList.remove("visible");
+            Member.classList.remove("visible");
+            Member.classList.add("hiddenRight");
+            memberSection.classList.remove("visible");
+            memberSection.classList.add("hidden");
+            document.body.style.backgroundImage = "url('background2.png')";
+            event.preventDefault();
+        });
+    
+        teamLink.addEventListener("click", function(event) {
+            homeContent.classList.remove("visible");
+            homeContent.classList.add("hidden");
+            aboutContent.classList.remove("visible");
+            aboutContent.classList.add("hidden");
+            President.classList.remove("hidden");
+            President.classList.add("visible");
+            aboutSection.classList.remove("visible");
+            presidentSection.classList.add("visible");
+            Member.classList.remove("hidden");
+            Member.classList.add("visible");
+            memberSection.classList.add("visible");
+            document.body.style.backgroundImage = "url('background3.jpg')";
+            event.preventDefault();
+        });
+    
+        calendarLink.addEventListener("click", function(event) {
+            window.open("https://calendar.google.com/calendar/u/0?cid=YmVja21hbmhzc2Npb2x5QGdtYWlsLmNvbQ", "_blank");
+            event.preventDefault();
+        });
+    
+        galleryLink.addEventListener("click", function(event) {
+            window.open("https://www.flickr.com/photos/200375580@N08/", "_blank");
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>
