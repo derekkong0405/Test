@@ -33,15 +33,18 @@
         }
 
         .content.hiddenRight {
-            transform: translateX(100%); /* Initially hidden off-screen to the right */
+            /*transform: translateX(100%); /* Initially hidden off-screen to the right */
+            visibility: hidden;
         }
 
         .content.hiddenLeft {
-            transform: translateX(-100%); /* Initially hidden off-screen to the right */
+            /*transform: translateX(-100%); /* Initially hidden off-screen to the right */
+            visibility: hidden;
         }
 
         .content.visible {
-            transform: translateX(0); /* Slide in from the left */
+            /*transform: translateX(0); /* Slide in from the left */
+            visibility: visible;
         }
 
         .about-section.visible {
@@ -78,39 +81,62 @@
         <div class="content hidden" id="aboutContent">
             <div class="about-section" id="aboutSection">
                 <h2>About Us!</h2>
-                <p>Science Olympiad, as the name suggests is a competition for students to compete in fields of engineering, sciences, math, and more!
-                    <br> At Beckman, we strive to give the resources for each and every member to succeed in their events. 
+                <p>Science Olympiad, as the name suggests, is a competition for students to bridge technical and theoretical work by competing in engineering, science, and math events!
+                    <br> At Beckman, we strive to provide the resources for each and every member to feel the magic of science by getting their hands into concepts, not just reading about them. 
                     <br>
-                        <br> <i>Our mission is to host exciting competitive tournaments and professional development workshops 
-                            <br>that showcase innovative STEM content to students and teachers throughout the United States.</i>
+                        <br> <i>Our mission is to foster a supportive learning environment and a tight-knit community of scientists and 
+                            <br>engineers who are eager to take advantage of resources that will help them explore STEM beyond the classroom</i>
                 </p>
             </div>
         </div>
 
-        <div class="content hidden" id="President">
-            <div class="president-section" id="President">
-                <h2>Meet the Team!</h2>
-                <p>Introducing our dedicated team members...</p>
+        <div class="content hidden" id="PresidentContent">
+            <div class="president-section" id="PresidentSection">
+                <h2>Meet the Board!</h2>
+                <p>
+                    Derek Kong - President
+                    <br>Gillian Hu - Vice President
+                    <br>Siddh Ranawat - Secretary
+                    <br>Bethany Cheung - Treasurer
+                    <br>Anderson Kwon - Build Captain
+                    <br>Miles Huang - Build Lieutenant
+                </p>
                 <!-- Add team member details here -->
             </div>
         </div>
         
-        <!-- Duplicate of "Meet the Team" box placed below -->
-        <div class="content hidden" id="PresidentDuplicate">
-            <div class="president-section" id="PresidentDuplicate">
+        <div class="content hidden" id="MemberContent">
+            <div class="member-section" id="MemberSection">
                 <h2>Meet the Team!</h2>
-                <p>Introducing our dedicated team membersasdasnjklsdsd...</p>
+                <p>
+                    Adith Alagiri
+                    <br>Nathan Chan
+                    <br>Esther Che
+                    <br>Derrick Chen
+                    <br>Annie Chien
+                    <br>Aditi Dhawan
+                    <br>Carson Gan
+                    <br>Amudhan Gurumoorthy
+                    <br>Lindsey Jiang
+                    <br>Jordan Kikuta
+                    <br>Minjee Kim
+                    <br>Hannah Kim
+                    <br>Carolyn Lee
+                    <br>Sasan Liaw
+                    <br>Kelly Lin
+                    <br>Melody Liu
+                    <br>Timothy Llata
+                    <br>Breanna Nguyen
+                    <br>VanPhuong Nguyen
+                    <br>Ayush Patel
+                    <br>Matthew Sato
+                    <br>Maya Savani
+                    <br>Sophie Tsai
+                    <br>Serena Zhang
+                </p>
                 <!-- Add team member details here -->
             </div>
         </div>
-
-<div class="content hidden" id="President3">
-    <div class="president-section" id="President3">
-        <h2>Meet the Team!</h2>
-        <p>Introducing our dedicated team members bruhhhhhhhhh...</p>
-        <!-- Add team member details here -->
-    </div>
-</div>
 
 
     </div>
@@ -118,13 +144,15 @@
     <script>
         const homeContent = document.getElementById("homeContent");
         const aboutContent = document.getElementById("aboutContent");
-        const President = document.getElementById("President");
-        const PresidentDuplicate = document.getElementById("PresidentDuplicate");
+        const President = document.getElementById("PresidentContent");
         const aboutSection = document.getElementById("aboutSection");
+        const presidentSection = document.getElementById("PresidentSection");
         const homeLink = document.getElementById("homeLink");
         const aboutLink = document.getElementById("aboutLink");
         const teamLink = document.getElementById("teamLink");
         const calendarLink = document.getElementById("calendarLink");
+        const Member = document.getElementById("MemberContent");
+        const memberSection = document.getElementById("MemberSection");
         const galleryLink = document.getElementById("galleryLink"); // Added reference for the Gallery link
     
         homeLink.addEventListener("click", function(event) {
@@ -135,6 +163,11 @@
             President.classList.remove("visible");
             President.classList.add("hidden");
             aboutSection.classList.remove("visible");
+            presidentSection.classList.remove("visible");
+            Member.classList.remove("visible");
+            Member.classList.add("hidden");
+            memberSection.classList.remove("visible");
+            memberSection.classList.add("hidden");
             document.body.style.backgroundImage = "url('mainBackground.png')";
             event.preventDefault();
         });
@@ -149,6 +182,11 @@
             PresidentDuplicate.classList.remove("visible");
             PresidentDuplicate.classList.add("hidden");
             aboutSection.classList.add("visible");
+            presidentSection.classList.remove("visible");
+            Member.classList.remove("visible");
+            Member.classList.add("hidden");
+            memberSection.classList.remove("visible");
+            memberSection.classList.add("hidden");
             document.body.style.backgroundImage = "url('background2.png')";
             event.preventDefault();
         });
@@ -161,8 +199,10 @@
             President.classList.remove("hidden");
             President.classList.add("visible");
             aboutSection.classList.remove("visible");
-            PresidentDuplicate.classList.remove("hidden");
-            PresidentDuplicate.classList.add("visible");
+            presidentSection.classList.add("visible");
+            Member.classList.remove("hidden");
+            Member.classList.add("visible");
+            memberSection.classList.add("visible");
             document.body.style.backgroundImage = "url('background3.jpg')";
             event.preventDefault();
         });

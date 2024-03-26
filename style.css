@@ -6,8 +6,8 @@
 }
 
 body {
-    overflow-x: scroll; /* Hide horizontal scrollbar */
-    overflow-y: scroll; /* Hide vertical scrollbar */
+    /*overflow-x: hidden; /* Hide horizontal scrollbar */
+    /*overflow-y: scroll; /* Hide vertical scrollbar */
     margin: 0; /* Reset default margin */
     padding: 0; /* Reset default padding */
 }
@@ -18,7 +18,7 @@ body {
     background-size: cover;
     background-position: center;
     position: relative; /* Ensure position is relative for absolute positioning */
-    overflow: scroll; /* Hide overflowing content */
+    overflow: auto; /* Hide overflowing content */
 }
 
 .background-overlay {
@@ -93,11 +93,13 @@ body {
 }
 
 .content.hidden {
-    transform: translateX(100%); /* Initially hidden off-screen to the right */
+    /*transform: translateX(100%); /* Initially hidden off-screen to the right */
+    visibility: hidden;
 }
 
 .content.visible {
-    transform: translateX(0); /* Slide in from the left */
+    /*transform: translateX(0); /* Slide in from the left */
+    visibility: visible;
 }
 
 .content h1 {
@@ -123,7 +125,7 @@ button {
     color: #fff;
     cursor: pointer;
     position: relative; /* Ensure button's position is relative */
-    overflow: scroll;
+    overflow: hidden;
 }
 
 span {
@@ -148,10 +150,10 @@ button:hover {
 }
 
 .about-section {
-    position: fixed;
+    position: sticky;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -150%);
+    transform: translate(-12%, -215%);
     background-color: rgba(0, 0, 0, 0.726);
     padding: 40px; /* Increased padding */
     color: white;
@@ -162,10 +164,10 @@ button:hover {
 }
 
 .president-section {
-    position: fixed;
+    position: sticky;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -300%);
+    transform: translate(-22%, -500%);
     background-color: rgba(0, 0, 0, 0.726);
     padding: 40px; /* Increased padding */
     color: white;
@@ -176,3 +178,17 @@ button:hover {
     height: 280px; /* Adjust height as needed */
 }
 
+.member-section {
+    position: sticky;
+    top: 50%;
+    left: 50%;
+    transform: translate(-22%, -235%);
+    background-color: rgba(0, 0, 0, 0.726);
+    padding: 40px; /* Increased padding */
+    color: white;
+    border-radius: 20px; /* Increased border radius */
+    transition: right 0.5s ease;
+    width: 80%; /* Adjust width as needed */
+    max-width: 700px; /* Optional: Set a maximum width */
+    height: 700px; /* Adjust height as needed */
+}
