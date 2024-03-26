@@ -7,7 +7,7 @@
 
 body {
     overflow-x: hidden; /* Hide horizontal scrollbar */
-    overflow-y: auto; /* Hide vertical scrollbar */
+    overflow-y: scroll; /* Hide vertical scrollbar */
     margin: 0; /* Reset default margin */
     padding: 0; /* Reset default padding */
 }
@@ -18,7 +18,7 @@ body {
     background-size: cover;
     background-position: center;
     position: relative; /* Ensure position is relative for absolute positioning */
-    overflow: auto; /* Hide overflowing content */
+    overflow: scroll; /* Hide overflowing content */
 }
 
 .background-overlay {
@@ -123,7 +123,7 @@ button {
     color: #fff;
     cursor: pointer;
     position: relative; /* Ensure button's position is relative */
-    overflow: auto;
+    overflow: scroll;
 }
 
 span {
