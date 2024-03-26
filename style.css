@@ -7,7 +7,7 @@
 
 body {
     overflow-x: hidden; /* Hide horizontal scrollbar */
-    /*overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-y: auto; /* Hide vertical scrollbar */
     margin: 0; /* Reset default margin */
     padding: 0; /* Reset default padding */
 }
@@ -18,11 +18,11 @@ body {
     background-size: cover;
     background-position: center;
     position: relative; /* Ensure position is relative for absolute positioning */
-    overflow: hidden; /* Hide overflowing content */
+    overflow: auto; /* Hide overflowing content */
 }
 
 .background-overlay {
-    /*position: absolute;*/
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -73,7 +73,7 @@ body {
     height: 3px;
     width: 0%;
     background: #3945ecd6;
-    /*position: absolute;*/
+    position: absolute;
     left: 0;
     bottom: -10px;
     transition: width 0.5s ease; /* Transition for underline width */
@@ -123,7 +123,7 @@ button {
     color: #fff;
     cursor: pointer;
     position: relative; /* Ensure button's position is relative */
-    overflow: hidden;
+    overflow: auto;
 }
 
 span {
@@ -131,7 +131,7 @@ span {
     height: 100%;
     width: 0%;
     border-radius: 25px;
-    /*position: absolute;*/
+    position: absolute;
     left: 0;
     bottom: 0;
     z-index: -1;
