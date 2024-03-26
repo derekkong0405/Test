@@ -22,7 +22,7 @@ body {
 }
 
 .background-overlay {
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     left: 0;
     width: 100%;
@@ -73,7 +73,7 @@ body {
     height: 3px;
     width: 0%;
     background: #3945ecd6;
-    position: absolute;
+    /*position: absolute;*/
     left: 0;
     bottom: -10px;
     transition: width 0.5s ease; /* Transition for underline width */
@@ -131,7 +131,7 @@ span {
     height: 100%;
     width: 0%;
     border-radius: 25px;
-    position: absolute;
+    /*position: absolute;*/
     left: 0;
     bottom: 0;
     z-index: -1;
