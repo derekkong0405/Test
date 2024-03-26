@@ -6,7 +6,7 @@
 }
 
 body {
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-x: scroll; /* Hide horizontal scrollbar */
     overflow-y: scroll; /* Hide vertical scrollbar */
     margin: 0; /* Reset default margin */
     padding: 0; /* Reset default padding */
